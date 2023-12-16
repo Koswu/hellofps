@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcsvphlxow2yb"]
+
+[ext_resource type="PackedScene" uid="uid://sjy8kk4prk67" path="res://FPSHand.glb" id="1_q0f6s"]
+
+[node name="FPSHand" instance=ExtResource("1_q0f6s")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -4.30333e-22, 0, 1, 0, 0, 0)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(0.0759778, 1.10162, 0.21758)
+bones/1/rotation = Quaternion(-0.685894, -0.10238, 0.37557, 0.614829)
+bones/1/scale = Vector3(1, 1, 1)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/position = Vector3(-0.0269324, 0.6756, 0.0771272)
+bones/7/rotation = Quaternion(-0.632844, 0.113732, -0.346521, 0.683006)
+bones/7/scale = Vector3(1, 1, 1)
+bones/11/scale = Vector3(1, 1, 1)

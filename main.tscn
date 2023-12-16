@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2wj1og8h0mkk"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_de4yc"]
+[ext_resource type="PackedScene" uid="uid://c1qda47xg1vfd" path="res://floor.tscn" id="1_xdo2y"]
+[ext_resource type="PackedScene" uid="uid://cm1ky8tbb8eed" path="res://slope.tscn" id="2_mooig"]
+[ext_resource type="PackedScene" uid="uid://lrhqvf88jt8c" path="res://box.tscn" id="3_7iflh"]
+[ext_resource type="PackedScene" uid="uid://chov1i8sjc8fb" path="res://player.tscn" id="4_cva11"]
+[ext_resource type="PackedScene" uid="uid://8giiyl5q7lvm" path="res://input_controller.tscn" id="6_f6xih"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8oj7q"]
+friction = 0.1
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_de4yc")
+
+[node name="floor" parent="." instance=ExtResource("1_xdo2y")]
+
+[node name="slope" parent="." instance=ExtResource("2_mooig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.531315, 0)
+
+[node name="slope2" parent="." instance=ExtResource("2_mooig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511578, 3.14958)
+
+[node name="slope3" parent="." instance=ExtResource("2_mooig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653757, -3.19502)
+
+[node name="box" parent="." instance=ExtResource("3_7iflh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20519, 0.497494, 0)
+mass = 0.09
+physics_material_override = SubResource("PhysicsMaterial_8oj7q")
+
+[node name="player" parent="." node_paths=PackedStringArray("input_controller") instance=ExtResource("4_cva11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77195, 1.14445, -3.50037)
+input_controller = NodePath("../inputController")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.67913, 0.390863, 0.621296, -0.0948482, -0.792605, 0.602313, 0.727864, -0.467978, -0.501209, -0.545336, 3.36248, 6.54621)
+light_energy = 6.029
+
+[node name="box2" parent="." instance=ExtResource("3_7iflh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67935, 0.541908, 0)
+
+[node name="inputController" parent="." instance=ExtResource("6_f6xih")]

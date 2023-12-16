@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm1ky8tbb8eed"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lel44"]
+radius = 0.317703
+height = 1.11005
+
+[sub_resource type="PrismMesh" id="PrismMesh_mncqn"]
+
+[node name="slope" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.00534, 0, 0, 0, -0.018493, 1.00517, 0, -1.00517, -0.018493, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_lel44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_mncqn")
